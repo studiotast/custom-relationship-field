@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace DigitalCreative\CustomRelationshipField;
 
@@ -66,10 +66,10 @@ trait CustomRelationshipFieldTrait
             ]);
 
             collect($methods)
-                ->map(fn(string $method) => $attribute . ucfirst($method))
-                ->filter(fn(string $method) => $method !== "{$attribute}Fields" && method_exists($this, $method))
+                ->map(fn (string $method) => $attribute . ucfirst($method))
+                ->filter(fn (string $method) => $method !== "{$attribute}Fields" && method_exists($this, $method))
                 ->each(function (string $method) use ($request, $fields): void {
-                    $fields->push([$this->{$method}($request)]);
+                    $fields->push([ $this->{$method}($request) ]);
                 });
 
             return FieldCollection::make(array_values($this->filter($fields->flatten()->all())));
@@ -130,7 +130,8 @@ trait CustomRelationshipFieldTrait
         array $filters = [],
         array $orderings = [],
         $withTrashed = TrashedStatus::DEFAULT,
-    ): Builder|BelongsToMany {
+    ): Builder|BelongsToMany 
+    {
         if ($method = static::extractAttributeFromRequest($request)) {
 
             if (!$search) {
@@ -142,9 +143,7 @@ trait CustomRelationshipFieldTrait
             if (method_exists(static::class, $method)) {
 
                 return static::applyOrderings(static::applyFilters(
-                    $request,
-                    static::initializeQuery($request, $query, $search, $withTrashed),
-                    $filters,
+                   $request, static::initializeQuery($request, $query, $search, $withTrashed), $filters,
                 ), $orderings)->tap(function ($query) use ($method, $request): void {
 
                     $resource = Nova::modelInstanceForKey($request->viaResource)
