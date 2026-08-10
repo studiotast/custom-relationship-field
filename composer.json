@@ -1,40 +1,40 @@
 {
-  "name": "digital-creative/custom-relationship-field",
-  "description": "Emulate HasMany relationship without having a real relationship set between resources",
-  "keywords": [
-    "laravel",
-    "nova",
-    "nova4",
-    "relationship",
-    "has-many",
-    "custom"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/dcasia/custom-relationship-field",
-  "authors": [
-    {
-      "name": "Rafael Milewski"
-    }
-  ],
-  "require": {
-    "php": ">=8.0",
-    "laravel/nova": "^5.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "DigitalCreative\\CustomRelationshipField\\": "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "DigitalCreative\\CustomRelationshipField\\CustomRelationshipFieldServiceProvider"
-      ]
-    }
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "digital-creative/custom-relationship-field",
+    "description": "Emulate HasMany relationship without having a real relationship set between resources",
+    "keywords": [
+        "laravel",
+        "nova",
+        "nova4",
+        "relationship",
+        "has-many",
+        "custom"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/dcasia/custom-relationship-field",
+    "authors": [
+        {
+            "name": "Rafael Milewski"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "laravel/nova": "^4.0|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DigitalCreative\\CustomRelationshipField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DigitalCreative\\CustomRelationshipField\\CustomRelationshipFieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
